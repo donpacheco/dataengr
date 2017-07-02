@@ -5,8 +5,8 @@ import logging
 from unittest.case import TestCase
 
 sys.path.insert(1, os.getcwd())
-from spiders.news import NewsSpider
-from utils import fake_response
+from crawler.spiders.news import NewsSpider
+from crawler.utils import fake_response
 
 
 logger = logging.getLogger()
@@ -37,5 +37,3 @@ class NewsSpiderTestCase(TestCase):
             'https://www.theguardian.com/travel/2017/jul/02/sailing-the-whitsundays-white-sand-snorkelling-and-a-blissful-digital-detox')
         self.assertEqual(itemdict['headline'],
             'Sailing the Whitsundays: white sand, snorkelling and a blissful digital detox')
-
-    

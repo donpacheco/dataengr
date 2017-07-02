@@ -6,7 +6,7 @@ import os
 import unittest
 
 sys.path.insert(1, os.getcwd())
-from utils import fake_response, match_class
+from crawler.utils import fake_response, match_class
 
 
 class UtilTest(unittest.TestCase):
