@@ -10,6 +10,8 @@ from crawler.utils import fake_response, match_class
 
 
 class UtilTest(unittest.TestCase):
+    """ Test module for Utils class """
+
     def test_match_class(self):
         result = match_class("class123")
         self.assertEqual(result, "*[contains(concat(' ', @class, ' '), ' class123 ')]")

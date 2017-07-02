@@ -85,9 +85,26 @@ DATABASES = {
     }
 }
 
+def is_test():
+    """
+    Checks, if we're running the server for real or in unit-test.
+
+    We might need a better implementation of this function.
+    """
+    if 'test' in sys.argv or 'testserver' in sys.argv:
+        print("Using a test mongo database")
+        return True
+    else:
+        print("Using a default mongo database")
+        return False
+
+if is_test():
+    db = 'news_test'
+else:
+    db = 'news'
 
 mongoengine.connect(
-    db = 'news',
+    db = db,
     host = os.environ['MONGODB_SERVER'],
     username = os.environ['MONGODB_USERNAME'],
     password = os.environ['MONGODB_PASSWORD'],

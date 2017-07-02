@@ -15,6 +15,8 @@ stream_handler = logging.StreamHandler(sys.stdout)
 logger.addHandler(stream_handler)
 
 class NewsSpiderTestCase(TestCase):
+    """ Test module for NewsSpider """
+
     def setUp(self):
         self.spider = NewsSpider()
 
