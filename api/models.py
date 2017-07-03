@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models
-from mongoengine import Document, EmbeddedDocument, fields
+from mongoengine import Document, fields
 
 # Create your models here.
 
@@ -15,3 +14,10 @@ class NewsItem(Document):
     url = fields.URLField(required=True)
     headline = fields.StringField(required=False, null=True)
     body = fields.DynamicField(required=False, null=True)
+
+    meta = {'indexes': [
+        {'fields': ['$headline', "$body"],
+         'default_language': 'english',
+         'weights': {'headline': 10, 'body': 2}
+        }
+    ]}

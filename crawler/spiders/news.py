@@ -1,13 +1,12 @@
-import os, sys
-import scrapy
+import os
+import sys
 
+sys.path.insert(1, os.getcwd())
+from items import NewsItem
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from readability import Document
 
-sys.path.insert(1, os.getcwd())
-from items import NewsItem
-from crawler.utils import match_class
 
 class NewsSpider(CrawlSpider):
 	name = "news"

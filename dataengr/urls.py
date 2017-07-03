@@ -13,14 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf import settings
-from django.conf.urls.static import static
+
 from django.conf.urls import include, url
-from django.contrib import admin
 from django.views.generic import RedirectView
 
 from routers import HybridRouter
-from api.views import *
+from api.views import NewsItemSet
 
 # Global DRF Router that routes views from all apps in project
 router = HybridRouter()

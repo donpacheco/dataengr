@@ -26,6 +26,8 @@ class MongoDBPipeline(object):
         for data in item:
             if not data:
                 raise DropItem("Missing data!")
+            if data =='<html><body/></html>':
+                raise DropItem("Missing data!")
         self.collection.update({'url': item['url']}, dict(item), upsert=True)
         log.msg("Article added to MongoDB database!",
                 level=log.DEBUG, spider=spider)
