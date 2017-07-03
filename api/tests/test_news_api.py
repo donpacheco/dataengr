@@ -43,7 +43,7 @@ class GetAllNewsItemTest(TestCase):
         # get data from db
         news = NewsItem.objects.all()
         serializer = NewsItemSerializer(news, many=True)
-        self.assertEqual(response.data, serializer.data)
+        self.assertEqual(response.data['results'], serializer.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 

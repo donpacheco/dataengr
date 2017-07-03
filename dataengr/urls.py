@@ -24,7 +24,7 @@ from api import views
 # Global DRF Router that routes views from all apps in project
 router = routers.DefaultRouter()
 
-router.register('news_items', views.NewsItemSet, 'news_item')
+router.register('news_item', views.NewsItemSet, 'news_item')
 router.register('crawl', views.ScrapyCrawlSet, 'crawl' )
 
 
