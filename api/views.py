@@ -61,6 +61,6 @@ class ScrapyCrawlSet(viewsets.ViewSet):
         runner = CrawlerRunner(settings)
         runner.crawl(spider)
         if reactor.running is False:
-            reactor.run()
-            
+            reactor.run(installSignalHandlers=0)
+
         return Response(status=status.HTTP_200_OK)
