@@ -30,3 +30,9 @@ db.sqlite3
 .idea/
 .scrapy/
 test.json
+
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
